@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Card</title>
+<style>
+body { background: #e3f2ff; font-family: Poppins; text-align: center; padding: 30px; }
+.card {
+    width: 70%;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+h1 { color: #ff6f91; }
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+th {
+    background: #ffd36b;
+    padding: 12px;
+    font-size: 18px;
+}
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+tr:hover { background: #fff5c2; }
+</style>
+</head>
+<body>
+
+<h1>📚 Report Card – <span th:text="${student.name}"></span></h1>
+
+<div class="card">
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+    </tr>
+
+    <tr th:each="m : ${marks}">
+        <td th:text="${m.subject}"></td>
+        <td th:text="${m.score}"></td>
+    </tr>
+</table>
+</div>
+
+</body>
+</html>

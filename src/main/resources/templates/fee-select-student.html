@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fee Status</title>
+<style>
+body { background: #eaffea; font-family: Poppins; text-align:center; padding:20px; }
+table { width:80%; margin:auto; background:white; padding:15px; border-radius:20px; }
+th, td { padding: 14px; }
+a { background:#ffb84c; padding:8px 16px; border-radius:10px; color:white; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<h1>💰 Update Fee Status</h1>
+
+<table>
+<tr><th>Name</th><th>Class</th><th>Update</th></tr>
+
+<tr th:each="s : ${students}">
+    <td th:text="${s.name}"></td>
+    <td th:text="${s.className}"></td>
+    <td>
+        <a th:href="@{'/teacher/fees/update/' + ${s.id}}">Update Fee</a>
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

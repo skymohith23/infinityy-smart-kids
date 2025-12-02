@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Dashboard - Infinityy Smart Kids</title>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffd6e7, #aee2ff);
+            font-family: "Poppins", sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 34px;
+            color: #ff6f91;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            width: 260px;
+            height: 160px;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            text-align: center;
+            padding-top: 30px;
+            font-size: 20px;
+            color: #ff9e00;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.07);
+            background: #fff6e0;
+        }
+
+        .emoji {
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="components/teacher-navbar :: teacherNav"></div>
+
+    <h1>🎈 Teacher Dashboard – Infinityy Smart Kids 🎨</h1>
+
+    <div class="container">
+
+        <a href="/teacher/students" style="text-decoration:none;">
+            <div class="card">
+                <div class="emoji">📚</div>
+                Students List
+            </div>
+        </a>
+
+        <a href="/teacher/marks" style="text-decoration:none;">
+            <div class="card">
+                <div class="emoji">📝</div>
+                Manage Marks
+            </div>
+        </a>
+
+        <a href="/teacher/attendance" style="text-decoration:none;">
+            <div class="card">
+                <div class="emoji">✔️❌</div>
+                Attendance
+            </div>
+        </a>
+
+        <a href="/teacher/fees" style="text-decoration:none;">
+            <div class="card">
+                <div class="emoji">💰</div>
+                Fee Status
+            </div>
+        </a>
+
+    </div>
+<a href="/teacher/students/add" style="text-decoration:none;">
+    <div class="card">
+        <div class="emoji">➕👶</div>
+        Add Student
+    </div>
+</a>
+
+</body>
+</html>

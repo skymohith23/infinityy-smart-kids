@@ -1,0 +1,55 @@
+<div th:fragment="teacherNav">
+    <style>
+        .navbar {
+            background: #fffae6;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-family: Poppins;
+        }
+        .navbar img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        .nav-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ff6f91;
+            margin-left: 12px;
+        }
+        .nav-right a {
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 17px;
+            color: #444;
+            transition: 0.3s;
+        }
+        .nav-right a:hover {
+            color: #ff6f91;
+        }
+    </style>
+
+    <div class="navbar">
+        <div class="nav-left">
+            <img src="/images/infinityy-logo.png">
+            <div class="nav-title">Infinityy Smart Kids – Teacher</div>
+        </div>
+
+        <div class="nav-right">
+            <a href="/teacher/home">Dashboard</a>
+            <a href="/teacher/students">Students</a>
+            <a href="/teacher/marks">Marks</a>
+            <a href="/teacher/attendance">Attendance</a>
+            <a href="/teacher/fees">Fees</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</div>

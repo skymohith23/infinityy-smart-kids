@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Student - Attendance</title>
+    <style>
+        body { background: #e8faff; font-family: Poppins; text-align: center; padding: 20px; }
+        table { width: 80%; margin: auto; background: white; padding: 15px; border-radius: 20px; }
+        th, td { padding: 14px; }
+        a { background: #ffb84c; padding: 8px 16px; border-radius: 10px; color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+<div th:replace="components/teacher-navbar :: teacherNav"></div>
+
+<h1>✔️❌ Mark Attendance</h1>
+
+<table>
+<tr><th>Name</th><th>Class</th><th>Action</th></tr>
+
+<tr th:each="s : ${students}">
+    <td th:text="${s.name}"></td>
+    <td th:text="${s.className}"></td>
+    <td>
+        <a th:href="@{'/teacher/attendance/mark/' + ${s.id}}">Mark</a>
+    </td>
+</tr>
+
+</table>
+
+</body>
+</html>

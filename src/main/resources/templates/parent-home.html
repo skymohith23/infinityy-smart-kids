@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parent Dashboard - Infinityy Smart Kids</title>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #aee2ff, #ffd6e7);
+            font-family: "Poppins", sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #ff6f91;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            width: 260px;
+            height: 160px;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            text-align: center;
+            padding-top: 30px;
+            font-size: 20px;
+            color: #ff9e00;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.07);
+            background: #fff6e0;
+        }
+
+        .emoji {
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="components/parent-navbar :: parentNav"></div>
+
+    <h1>🌟 Parent Dashboard – Infinityy Smart Kids 🧸</h1>
+
+    <div class="container">
+
+        <a href="/parent/marks" style="text-decoration:none;">
+            <div class="card">
+                <div class="emoji">📝</div>
+                View Marks
+            </div>
+        </a>
+
+        <a href="/parent/attendance" style="text-decoration:none;">
+            <div class="card">
+                <div class="emoji">📅</div>
+                Attendance
+            </div>
+        </a>
+
+        <a href="/parent/fees" style="text-decoration:none;">
+            <div class="card">
+                <div class="emoji">💰</div>
+                Fee Status
+            </div>
+        </a>
+
+        <a href="/parent/notices" style="text-decoration:none;">
+            <div class="card">
+                <div class="emoji">📢</div>
+                Notices
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>

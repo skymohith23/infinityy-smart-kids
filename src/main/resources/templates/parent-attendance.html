@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance</title>
+<style>
+body { background: #fff0e6; font-family: Poppins; text-align: center; padding: 25px; }
+h1 { color: #ff6f91; }
+.card {
+    width: 70%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+table { width: 90%; margin: auto; }
+th { background: #ffd36b; padding: 12px; }
+td { padding: 12px; }
+.present { color: green; font-weight: bold; }
+.absent { color: red; font-weight: bold; }
+.error { color: red; font-size: 20px; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div th:replace="components/parent-navbar :: parentNav"></div>
+
+<h1>📅 Attendance</h1>
+
+<div th:if="${error}" class="error">
+    <p th:text="${error}"></p>
+</div>
+
+<div class="card" th:if="${student != null}">
+    <h2 th:text="${student.name}"></h2>
+
+    <table>
+        <tr><th>Date</th><th>Status</th></tr>
+
+        <tr th:each="a : ${attendance}">
+            <td th:text="${a.date}"></td>
+            <td th:text="${a.present ? 'Present' : 'Absent'}"
+                th:class="${a.present ? 'present' : 'absent'}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

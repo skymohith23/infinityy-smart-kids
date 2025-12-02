@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student - Infinityy Smart Kids</title>
+    <style>
+        body {
+            background: #ffe8f0;
+            font-family: "Poppins", sans-serif;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6f91;
+            font-size: 30px;
+        }
+
+        .form-box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 12px;
+            border: 2px solid #ffb84c;
+            font-size: 16px;
+        }
+
+        button {
+            width: 95%;
+            background: #ffb84c;
+            border: none;
+            padding: 12px;
+            border-radius: 15px;
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #ffaa22;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="components/teacher-navbar :: teacherNav"></div>
+
+<h1>🧸 Add New Student</h1>
+
+<div class="form-box">
+    <form action="/teacher/students/add" method="post">
+
+        <input type="text" name="name" placeholder="Student Name" required>
+        <input type="text" name="className" placeholder="Class (e.g., Nursery, LKG)" required>
+        <input type="text" name="rollNumber" placeholder="Roll Number" required>
+        <input type="date" name="dateOfBirth" placeholder="Date of Birth" required>
+        <input type="text" name="parentName" placeholder="Parent Name" required>
+        <input type="text" name="parentPhone" placeholder="Parent Phone" required>
+
+        <button type="submit">Add Student</button>
+    </form>
+</div>
+
+</body>
+</html>

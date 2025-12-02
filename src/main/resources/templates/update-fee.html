@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update Fee</title>
+<style>
+body { background:#fff3e6; font-family:Poppins; text-align:center; }
+.box { width:350px; margin:auto; background:white; padding:20px; border-radius:20px; }
+input, select { width:90%; padding:10px; margin:10px; border-radius:10px; }
+button { background:#ffb84c; border:none; padding:12px; width:95%; border-radius:12px; }
+</style>
+</head>
+<body>
+<div th:replace="components/parent-navbar :: parentNav"></div>
+
+<h1>💰 Update Fee for <span th:text="${student.name}"></span></h1>
+
+<div class="box">
+<form action="/teacher/fees/update" method="post">
+
+    <input type="hidden" name="studentId" th:value="${student.id}">
+
+    <label>Month:</label>
+    <input type="text" name="month" placeholder="e.g., January" required>
+
+    <label>Status:</label>
+    <select name="paid" required>
+        <option value="true">Paid</option>
+        <option value="false">Not Paid</option>
+    </select>
+
+    <button type="submit">Save</button>
+</form>
+</div>
+
+</body>
+</html>
